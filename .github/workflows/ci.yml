@@ -1,0 +1,29 @@
+name: EventFlow CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Verificar archivos requeridos
+        run: |
+          test -f index.html
+          test -f styles.css
+          test -f app.js
+          test -f main.tf
+          test -d diagramas
+          test -f docs/Informe_Taller_Arquitectura_Software_EventFlow_SUMP.docx
+
+      - name: Verificar referencias del prototipo
+        run: |
+          grep -q 'styles.css' index.html
+          grep -q 'app.js' index.html
