@@ -13,7 +13,7 @@ Repositorio independiente para la entrega académica de Arquitectura de Software
 - `.github/workflows/ci.yml`: integración continua en GitHub Actions.
 - `main.tf`: ejemplo académico de infraestructura como código para Google Cloud.
 - `diagramas/`: diagramas Mermaid editables para arquitectura y modelo de dominio.
-- `docs/Informe_Taller_Arquitectura_Software_EventFlow_SUMP.docx`: informe técnico de la actividad.
+- `docs/Informe_JuanRubio_Arquitectura_Software_EventFlow_SUMP_FINAL.docx`: informe técnico de la actividad.
 - `INSTRUCCIONES_EVIDENCIAS.md`: lista de evidencias que aún requieren ejecución externa real.
 
 ## Ejecutar el prototipo
