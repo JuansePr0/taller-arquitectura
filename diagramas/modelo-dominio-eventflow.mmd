@@ -1,0 +1,6 @@
+erDiagram
+  USUARIO ||--o{ PEDIDO : realiza
+  EVENTO ||--o{ ENTRADA : ofrece
+  PEDIDO ||--|{ DETALLE_PEDIDO : contiene
+  ENTRADA ||--o| DETALLE_PEDIDO : asignada_a
+  PEDIDO ||--o{ PAGO : registra

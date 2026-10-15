@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EventFlow - Venta de Entradas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <header class="site-header">
+      <h1>EventFlow</h1>
+      <p>Tu plataforma para descubrir eventos y comprar entradas.</p>
+    </header>
+    <section aria-labelledby="events-title">
+      <h2 id="events-title">Eventos disponibles</h2>
+      <label for="event-search">Buscar evento</label>
+      <input id="event-search" type="search" placeholder="Nombre del evento">
+      <article class="evento">
+        <div>
+          <h3>Concierto de Rock</h3>
+          <p>Fecha: 30 de diciembre</p>
+          <p>Desde $120.000 COP</p>
+        </div>
+        <button type="button" class="buy-button" data-event="Concierto de Rock">Comprar entrada</button>
+      </article>
+      <article class="evento">
+        <div>
+          <h3>Feria de Tecnología</h3>
+          <p>Fecha: 15 de enero</p>
+          <p>Desde $45.000 COP</p>
+        </div>
+        <button type="button" class="buy-button" data-event="Feria de Tecnología">Comprar entrada</button>
+      </article>
+      <p id="status" role="status" aria-live="polite"></p>
+    </section>
+    <footer><p>&copy; 2026 EventFlow. Todos los derechos reservados.</p></footer>
+  </main>
+  <script src="app.js" defer></script>
+</body>
+</html>

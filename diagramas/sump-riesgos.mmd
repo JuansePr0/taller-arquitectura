@@ -1,0 +1,10 @@
+flowchart LR
+  ST["Estudiantes"] --> WEB["Interfaz web con problemas UX"]
+  WEB --> MONO["Monolito académico Java 8 / Spring MVC"]
+  MONO --> ORA[("Oracle centralizado")]
+  MONO -->|"HTTP sincrónico por VPN inestable"| PAY["Microservicio de pagos Node.js en AWS"]
+  PAY --> EXT["Pasarela de pagos externa"]
+  MONO -.-> R1["Riesgo: hilos bloqueados y latencia"]
+  PAY -.-> R2["Riesgo: estado de pago incierto"]
+  MONO -.-> S1["Sensibilidad: integración acoplada"]
+  PAY -.-> S1

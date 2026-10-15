@@ -1,0 +1,20 @@
+flowchart TB
+  subgraph MONO["Monolito en capas"]
+    UI["Presentación: HTML, CSS, JS"] --> BL["Lógica de negocio: usuarios, eventos, pedidos, pagos"]
+    BL --> DAL["Acceso a datos: DAO"]
+    DAL --> DB[("Base SQL compartida")]
+  end
+  subgraph MS["Microservicios orientados a eventos"]
+    APP["Navegador / App"] --> GW["API Gateway"]
+    GW --> US["Servicio Usuarios"]
+    GW --> EV["Servicio Eventos"]
+    GW --> OR["Servicio Pedidos"]
+    OR --> PAY["Servicio Pagos"]
+    US --> UDB[("DB Usuarios")]
+    EV --> EDB[("DB Eventos")]
+    OR --> ODB[("DB Pedidos")]
+    PAY --> PDB[("DB Pagos")]
+    PAY --> BUS["Bus de eventos: PagoAprobado"]
+    BUS --> TICK["Servicio Entradas"]
+    TICK --> TDB[("DB Entradas")]
+  end
